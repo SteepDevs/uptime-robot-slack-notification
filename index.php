@@ -42,7 +42,7 @@ $slack = new Slack(SLACK_BOT_USERNAME, SLACK_BOT_TOKEN, SLACK_BOT_CHANNEL);
 echo json_encode([
     'response' => $slack->notify([
         [
-            "fallback" => null,
+            "fallback" => $details,
             "color" => $color,
             "title" => $project,
             "text" => $message
