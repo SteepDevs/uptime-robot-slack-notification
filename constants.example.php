@@ -7,3 +7,4 @@ defined('SLACK_BOT_TOKEN') or define('SLACK_BOT_TOKEN', 'some-token');
  * * @link https://slack.com/api/channels.list?token={token} channels info
  */
 defined('SLACK_BOT_CHANNEL') or define('SLACK_BOT_CHANNEL', 'some-channel-id');
+defined('SECRET_KEY') or define('SECRET_KEY', '');
