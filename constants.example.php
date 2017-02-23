@@ -8,3 +8,4 @@ defined('SLACK_BOT_TOKEN') or define('SLACK_BOT_TOKEN', 'some-token');
  */
 defined('SLACK_BOT_CHANNEL') or define('SLACK_BOT_CHANNEL', 'some-channel-id');
 defined('SECRET_KEY') or define('SECRET_KEY', '');
+defined('SLACK_BOT_ERRORS_CHANNEL') or define('SLACK_BOT_ERRORS_CHANNEL', 'G486XEXC0');

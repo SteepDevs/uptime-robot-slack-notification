@@ -17,18 +17,19 @@ if (!empty(array_diff(['projectName', 'alertDetails', 'color'], array_keys($_GET
     die();
 }
 
-$project = $_GET['projectName'];
-$details = $_GET['alertDetails'];
-$color = $_GET['color'];
-$secretKey = $_GET['secretKey'];
+$project = $_POST['projectName'];
+$details = $_POST['alertDetails'];
+$message = $_POST['message'];
+$color = $_POST['color'];
+$secretKey = $_POST['secretKey'];
 
-if (md5($project . $color . $details . SECRET_KEY) != $secretKey || empty($project) || empty($color))
+if (md5($project . $color . $details . $message . SECRET_KEY) != $secretKey || empty($project) || empty($color) || empty($message))
 {
     echo 'Параметры переданы неверно.';
     die();
 }
 
-$slack = new Slack(SLACK_BOT_USERNAME, SLACK_BOT_TOKEN, SLACK_BOT_CHANNEL);
+$slack = new Slack(SLACK_BOT_USERNAME, SLACK_BOT_TOKEN, SLACK_BOT_ERRORS_CHANNEL);
 
 echo json_encode([
     'response' => $slack->notify([
