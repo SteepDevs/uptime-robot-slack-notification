@@ -11,7 +11,7 @@ if (!file_exists(dirname(__FILE__) . '/vendor/autoload.php'))
 require_once (dirname(__FILE__) . '/vendor/autoload.php');
 require_once('constants.php');
 
-if (!empty(array_diff(['projectName', 'alertDetails', 'color'], array_keys($_GET))))
+if (!empty(array_diff(['projectName', 'alertDetails', 'color'], array_keys($_POST))))
 {
     echo 'Переданы не все обязательные параметры.';
     die();
